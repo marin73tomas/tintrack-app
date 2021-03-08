@@ -1,0 +1,79 @@
+@import "../main";
+@import "../components/DayTrack";
+@import "../components/DayCard";
+@import "../components/KpiBoard";
+
+.dashboard {
+    &-bg-image {
+        @include tintrack-bg-image();
+    }
+    &-wrapper {
+        @extend .tin-wrapper;
+    }
+    &-tools {
+        color: rgba($color: #FFF, $alpha: 0.6);
+        display: grid;
+        grid-template-areas:
+            "title title title title"
+            "prev search add-task next";
+        grid-template-rows: auto auto;
+        grid-template-columns: repeat(4, 1fr);
+        .title {
+            grid-area: title;
+            text-align: center;
+            padding: 0.5rem 1rem 0 1rem;
+        }
+        .prev, .next, .search, .add {
+            cursor: pointer;
+            @include build-flex(row, nowrap);
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            // margin: auto;
+            padding: 0.5rem 0.5rem 1rem 0.5rem;
+            svg {
+                width: 24px;
+                height: 24px;
+            }
+            &:hover {
+                color: #FFF;
+            }
+        }
+        .prev, .next {
+            svg {
+                width: 26px;
+                height: 26px;
+            }
+        }
+        .prev {
+            grid-area: prev;
+        }
+        .search {
+            grid-area: search;
+        }
+        .add {
+            grid-area: add-task;
+        }
+        .next {
+            grid-area: next;
+        }
+        .legend {
+            display: none;
+        }
+        @include media-breakpoint-up(lg) {
+            grid-template-areas:
+            "prev title title next"
+            "search search add-task add-task";
+            grid-template-rows: auto auto;
+            grid-template-columns: 1fr 2fr 2fr 1fr;
+            .prev, .next {
+                padding: 0.5rem 1rem 0 1rem;
+                // margin: auto;
+            }
+            .legend {
+                display: inline-block;
+                margin: auto 0.5rem;
+            }
+        }
+    }
+}

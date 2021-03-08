@@ -1,0 +1,289 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+}
+.no-text-style {
+    color: inherit;
+    text-decoration: inherit;
+    &:focus, &:hover, &:visited, &:link, &:active {
+        color: inherit;
+        text-decoration: inherit;
+    }
+}
+
+// declare variables and mixins; if enough of them are
+// declared, create a 'base' folder and files for them.
+
+// variables
+$purple-tin: rgba($color: #7B87CC, $alpha: 1);
+$blue-tin: rgba($color: #009AFF, $alpha: 1);
+$background-tin: rgba($color: #468DB9, $alpha: 1);
+$white-tin: rgba($color: #FFF, $alpha: 0.6);
+
+// mixins
+// build flex containers
+@mixin build-flex($flow, $wrap) {
+    display: flex;
+    flex-flow: $flow;
+    flex-wrap: $wrap;
+}
+// use background image
+@mixin tintrack-bg-image() {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color: $purple-tin, $alpha: 0.3),
+        rgba($color: $blue-tin, $alpha: 0.3)),
+        url("../../assets/img/backgrounds/loginBg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+// uncomment code ahead to edit boostrap styles
+// and variables, like changing theme colors.
+// do not add code for this purpose under the @import
+// as it will not be taken into account.
+// also, if you add bootstrap scss here, you need to
+// comment bootstrap import on index.js, as it would
+// otherwise retain priority over this import.
+
+// change theme warning color from orange to primary blue
+// $theme-colors: (
+//     "warning": #0074D9
+// );
+
+// import boostrap scss
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// declare animations and utility classes that will be
+// used by many components and views; if enough of them
+// are declared, create a 'helpers' folder and files for
+// them.
+
+// animations
+@keyframes load8 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes box-push {
+    0% {
+        transform: translate(0, -1em) rotate(-45deg);
+    }
+    5% {
+        transform: translate(0, -1em) rotate(-50deg);
+    }
+    20% {
+        transform: translate(1em, -2em) rotate(47deg);
+    }
+    25% {
+        transform: translate(1em, -2em) rotate(45deg);
+    }
+    30% {
+        transform: translate(1em, -2em) rotate(40deg);
+    }
+    45% {
+        transform: translate(2em, -3em) rotate(137deg);
+    }
+    50% {
+        transform: translate(2em, -3em) rotate(135deg);
+    }
+    55% {
+        transform: translate(2em, -3em) rotate(130deg);
+    }
+    70% {
+        transform: translate(3em, -4em) rotate(217deg);
+    }
+    75% {
+        transform: translate(3em, -4em) rotate(220deg);
+    }
+    100% {
+        transform: translate(0, -1em) rotate(-225deg);
+    }
+}
+
+// utility classes and styles
+.view-loader {
+    position: absolute;
+    top: calc(50% - 4rem);
+    left: calc(50% - 4rem);
+    width: 8rem;
+    height: 8rem;
+    border: 1rem solid rgba($color: #333745, $alpha: 0.4);
+    border-left: 1rem solid #333745;
+    border-radius: 50%;
+    animation: load8 1s infinite linear;
+    transition: opacity 0.3s;
+    &-wrapper {
+        position: relative;
+    }
+}
+.component-loader {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-top: -2.7em;
+    margin-left: -2.7em;
+    width: 5.4em;
+    height: 5.4em;
+    background-color: transparent;
+    .light {
+        color: $light !important;
+        border-color: $light !important;
+    }
+    &-message {
+        @include build-flex(column, nowrap);
+        align-items: center;
+        color: $dark;
+    }
+    &-wrapper {
+        position: relative;
+        @include build-flex(column, nowrap);
+        justify-content: flex-end;
+        height: 20em;
+        width: 100%;
+        margin-top: 2rem;
+    }
+    &-hill {
+        position: absolute;
+        width: 7.1em;
+        height: 7.1em;
+        top: 1.7em;
+        left: 1.7em;
+        background-color: transparent;
+        border-left: .25em solid $dark;
+        transform: rotate(45deg);
+        &::after {
+            content: "";
+            position: absolute;
+            width: 7.1em;
+            height: 7.1em;
+            left: 0;
+            background-color: transparent;
+        }
+    }
+    &-box {
+        position: absolute;
+        left: 0;
+        bottom: -.1em;
+        width: 1em;
+        height: 1em;
+        background-color: transparent;
+        border: .25em solid $dark;
+        border-radius: 15%;
+        transform: translate(0, -1em) rotate(-45deg);
+        animation: box-push 2.5s cubic-bezier(.79, 0, .47, .97) infinite; 
+    }
+}
+.tin-wrapper {
+    @include build-flex(column, wrap);
+    min-height: 68vh;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.del-button {
+    position: absolute;
+    bottom: 0%;
+    left: 100%;
+    width: 24px;
+    height: 24px;
+    background-color: red;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    opacity: 1;
+    transform: translate(-2.25rem, -3rem);
+    @include media-breakpoint-up(md) {
+        opacity: 0.3;
+    }
+    &-msg {
+        display: none;
+        color: white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: max-content;
+        transform: translate(-2rem, -3px);
+    }
+    &:hover {
+        opacity: 1;
+        transform: translate(-2.25rem, -3rem);
+        .del-button-msg {
+            display: inline;
+            transform: translate(-2rem, -3px);
+        }
+    }
+    &::before, &::after {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        content: ' ';
+        height: 14px;
+        width: 3px;
+        background-color: white;
+    }
+    &::before {
+        transform: translate(9px, 3px) rotate(45deg);
+    }
+    &::after {
+        transform: translate(9px, 3px) rotate(-45deg);
+    }
+}
+.tin-modal {
+    position: fixed;
+    width: 50%;
+    min-width: 340px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 2rem;
+    z-index: 1200;
+    border: 2px solid $white-tin;
+    border-radius: 1rem;
+    &-body {
+        text-align: center;
+    }
+    &-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1100;
+        background-color: rgba($color: $dark, $alpha: 0.8);
+    }
+    &-actions {
+        @include build-flex(row, wrap);
+        justify-content: center;
+
+    }
+    > br {
+        border: 1px solid rgba($color: $dark, $alpha: 0.3);
+    }
+}
+// overwrite date picker style
+.dob-picker {
+    > div {
+        width: 100%;
+    }
+}
+// style for feeling selector reuse
+.feeling-selector {
+    .icon-selector {
+        @include build-flex(row, wrap);
+        justify-content: center;
+        width: 100%;
+        padding: 0.5rem;
+        gap: 0.5rem;
+        background-color: transparent;
+        // border: 1px solid #CED4DA;
+        // border-radius:0.25rem;
+    }
+}

@@ -1,0 +1,5 @@
+.options-info {
+    @include build-flex(column, nowrap);
+    justify-content: center;
+    align-items: center;
+}

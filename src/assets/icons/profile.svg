@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Written by Treer (gitlab.com/Treer) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="256"
+   height="256"
+   id="svg18"
+   sodipodi:docname="profile.svg"
+   style="fill:#ffffff"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata22">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Abstract user icon</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview20"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="1.8101934"
+     inkscape:cx="99.7631"
+     inkscape:cy="40.537534"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg18"
+     inkscape:pagecheckerboard="false" />
+  <title
+     id="title2">Abstract user icon</title>
+  <defs
+     id="defs10">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient875">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0"
+         id="stop871" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.43137255"
+         offset="1"
+         id="stop873" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient867"
+       inkscape:collect="always">
+      <stop
+         id="stop861"
+         offset="0"
+         style="stop-color:#fffffc;stop-opacity:1" />
+      <stop
+         id="stop865"
+         offset="1"
+         style="stop-color:#fffffc;stop-opacity:0.48559672" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient829">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="0"
+         id="stop825" />
+      <stop
+         style="stop-color:#30cfd0;stop-opacity:1"
+         offset="1"
+         id="stop827" />
+    </linearGradient>
+    <clipPath
+       id="circular-border">
+      <circle
+         cx="300"
+         cy="300"
+         r="280"
+         id="circle4" />
+    </clipPath>
+    <clipPath
+       id="avoid-antialiasing-bugs">
+      <rect
+         width="100%"
+         height="498"
+         id="rect7"
+         x="0"
+         y="0" />
+    </clipPath>
+    <clipPath
+       id="circular-border-4">
+      <circle
+         cx="300"
+         cy="300"
+         r="280"
+         id="circle4-8" />
+    </clipPath>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient829"
+       id="linearGradient839"
+       x1="128.65625"
+       y1="255.73438"
+       x2="128.65625"
+       y2="0.65624982"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient867"
+       id="radialGradient849"
+       cx="111.59378"
+       cy="75.687462"
+       fx="111.59378"
+       fy="75.687462"
+       r="52.57143"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient875"
+       id="radialGradient869"
+       cx="201.8201"
+       cy="368.36401"
+       fx="201.8201"
+       fy="368.36401"
+       r="205"
+       gradientTransform="matrix(0.47537346,0.47537346,-0.53203116,0.53203116,308.61055,118.45494)"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <circle
+     style="fill:url(#linearGradient839);fill-opacity:1;stroke:none;stroke-width:123.65283203;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="path840"
+     cx="128"
+     cy="128"
+     r="128" />
+  <circle
+     cx="128.00003"
+     cy="95.999962"
+     r="52.57143"
+     id="circle14-8"
+     style="fill:url(#radialGradient849);fill-opacity:1;stroke-width:0.45714286" />
+  <circle
+     cx="300"
+     cy="550"
+     r="205"
+     clip-path="url(#circular-border-4)"
+     id="circle16-6"
+     style="fill:url(#radialGradient869);fill-opacity:1"
+     transform="matrix(0.45714286,0,0,0.45714286,-9.14284,-9.14286)" />
+</svg>

@@ -1,0 +1,26 @@
+.footer {
+    &-sn-row {
+        img {
+            width: 3rem;
+        }
+    } 
+    &-terms {
+        font-size: smaller;
+        h5 {
+            color: rgba($color: #FFF, $alpha: 0.6);
+        }
+        p {
+            color: rgba($color: #FFF, $alpha: 0.4);
+        }
+    }
+    &-cpr {
+        @extend .footer-terms;
+        @extend .footer-sn-row;
+        p {
+            margin: 0;
+        }
+        img {
+            margin: 0.5rem 1rem;
+        }
+    }
+}

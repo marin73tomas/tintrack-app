@@ -1,0 +1,15 @@
+@import "../main";
+@import "../components/HomeCard";
+@import "../components/TinNavbar";
+@import "../components/TinFooter";
+
+.home {
+    &-bg-image {
+        @include tintrack-bg-image();
+    }
+    &-jumbotron {
+        background-color: rgba($color: #FFF, $alpha: 0.4) !important;
+        border-radius: 1rem !important;
+    }
+
+}

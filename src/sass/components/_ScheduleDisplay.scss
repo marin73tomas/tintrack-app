@@ -1,0 +1,66 @@
+.schedule {
+    @include build-flex(column, nowrap);
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+    &-top-legend {
+        @include build-flex(row, nowrap);
+        justify-content: center;
+        width: 100%;
+    }
+    &-left-legend {
+        @include build-flex(column, nowrap);
+        width: auto;
+    }
+    &-content {
+        @include build-flex(row, nowrap);
+        justify-content: center;
+    }
+    &-weeknumbers {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        .weeknumber {
+            height: 12px;
+        }
+    }
+    &-weekdays {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: 1fr;
+        gap: 5px;
+        .weekday {
+            width: 12px;
+            text-align: center;
+        }
+    }
+    &-container {
+        display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 5px;
+    margin: 0;
+    &-sm {
+        .schedule {
+            &-day {
+                width: 12px;
+                height: 12px;
+                background-color: $dark;
+                border: solid rgba($color: #FFF, $alpha: 0.6) 1px;
+                &-on {
+                    background-color: rgba($color: #FFF, $alpha: 0.2);
+                }
+                &-double {
+                    background-color: rgba($color: #FFF, $alpha: 0.5);
+                }
+                &-full {
+                    background-color: rgba($color: #FFF, $alpha: 0.8);
+                }
+            }
+        }
+    }
+    }
+}
+.schedule-container {
+    
+}

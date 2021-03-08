@@ -1,0 +1,31 @@
+@import "./DayCard";
+
+.edit {
+    &-card {
+        @extend .day-card;
+        &-header {
+            @extend .day-card-header;
+            .card-header-info {
+                @include build-flex(row, nowrap);
+                width: 60%;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+        &-title {
+            @extend .day-card-title;
+        }
+        &-body {
+            @extend .day-card-body;
+            // adding padding button for delete & unmount
+            // functions on edit task/habit cards
+            padding-bottom: 2rem;
+        }
+        &-actions {
+            @extend .day-card-actions;
+            // adding position relative so delete button's
+            // absolute refers to this
+            position: relative;
+        }
+    }
+}

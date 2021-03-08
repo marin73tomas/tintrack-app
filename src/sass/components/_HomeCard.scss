@@ -1,0 +1,9 @@
+.home-card {
+    background-color: rgba($color: #FFF, $alpha: 0.4) !important;
+    border-radius: 1rem !important;
+    justify-content: center;
+    height: 100%;
+    img {
+        max-width: 224px;
+    }
+}

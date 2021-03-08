@@ -1,0 +1,6 @@
+@import "./DayTrack";
+
+.edit-track {
+    @extend .day-track;
+    background-color: rgba($color: $background-tin, $alpha: 0.5);
+}

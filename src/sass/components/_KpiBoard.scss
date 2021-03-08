@@ -1,0 +1,27 @@
+.kpi{
+    &-slot {
+        width: 30%;
+        > p {
+            font-size: 0.75rem;
+            margin: 0;
+        }
+    }
+    &-number {
+        width: 50%;
+        display: inline-block;
+        text-align: center;
+        background-color: rgba($color: #222, $alpha: 1.0);
+        vertical-align: middle;
+        border: 2px solid rgba($color: #FFF, $alpha: 0.6);
+        padding: 2px;
+        > p {
+            margin: 0;
+        }
+        &-left {
+            border-right: 1px rgba($color: #FFF, $alpha: 0.6) solid;
+        }
+        &-right {
+            border-left: 1px rgba($color: #FFF, $alpha: 0.6) solid;
+        }
+    }
+}

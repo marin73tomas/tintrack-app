@@ -1,0 +1,111 @@
+.schedule-weeks-wrapper {
+    // @include build-flex(row, wrap);
+    gap: 1rem;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "week1"
+        "week2"
+        "week3"
+        "week4";
+    @include media-breakpoint-up(lg) {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "week1 week2"
+            "week3 week4";
+    }
+    // @include media-breakpoint-up(lg) {
+    //     grid-template-columns: repeat(4, 1fr);
+    //     grid-template-rows: 1fr;
+    //     grid-template-areas:
+    //         "week1 week2 week3 week4";
+    // }
+}
+.schedule-week {
+    &-card {
+        @include build-flex(column, nowrap);
+        width: 100%;
+        // max-width: 360px;
+        // min-width: 286px;
+        background-color: #FFFFFF;
+        border: 1px solid #CED4DA;
+        border-radius:0.25rem;
+        @include media-breakpoint-up(md) {
+            height: 100%;
+        }
+        padding: 1rem 0.5rem 2rem 0.5rem;
+    }
+    &-body {
+        display: grid;
+        grid-template-rows: 2fr repeat(7, 2fr);
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas:
+            "week-control week-times"
+            "day-0 times-0"
+            "day-1 times-1"
+            "day-2 times-2"
+            "day-3 times-3"
+            "day-4 times-4"
+            "day-5 times-5"
+            "day-6 times-6";
+        gap: 0.5rem;
+        .week-control {
+            @include build-flex(row, nowrap);
+            width: 100%;
+            justify-content: center;
+            padding: 0.5rem;
+        }
+        .week-times {
+            @include build-flex(row, nowrap);
+            width: 100%;
+            overflow-x: scroll;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0.5rem;
+            gap: 0.5rem;
+        }
+        .weekday-control {
+            @extend .week-control;
+            justify-content: flex-end;
+            align-items: center;
+            > p {
+                margin-bottom: 0;
+            }
+        }
+        .weekday-times {
+            @extend .week-times;
+        }
+    }
+}
+.time-holder {
+    display: grid;
+    grid-template-areas:
+        "delete-button time-holder-value";
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 4fr;
+    min-width: 120px;
+    max-width: 120px;
+    height: calc(1.5em + 1rem + 2px);
+    border-radius: 0.5rem;
+    border: 2px solid rgba($color: $dark, $alpha: 0.6);
+    &-any {
+        min-width: 90px;
+        max-width: 90px;
+    }
+}
+.delete-button {
+    align-self: center;
+    text-align: center;
+    color: $danger;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+.time-holder-value {
+    @include build-flex(column, nowrap);
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
